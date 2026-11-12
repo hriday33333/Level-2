@@ -1,0 +1,169 @@
+NVM দিয়ে Node.js Install এবং Version Manage করার সম্পূর্ণ নিয়ম
+NVM (Node Version Manager) ব্যবহার করে আমরা কম্পিউটারে একাধিক Node.js Version Install করতে পারি এবং প্রয়োজন অনুযায়ী যেকোনো Version ব্যবহার করতে পারি।
+
+যেমন: Node.js 18, 20, 22, 24 ইত্যাদি। প্রতিবার নতুন করে Node.js Uninstall ও Install করার প্রয়োজন হবে না।
+
+নিচে ধাপে ধাপে সব Command সাজিয়ে দেওয়া হলো, যাতে সহজে নোট করে রাখতে পারো।
+Step 1: NVM Download এবং Install
+প্রথমে আমাদের NVM Install করতে হবে।
+
+1. Google Chrome ওপেন করব।
+2. Search Bar-এ লিখব NVM for Windows Download।
+3. GitHub-এর Official Repository-তে প্রবেশ করব।
+4. nvm-setup.exe ফাইলটি Download করব।
+5. Download শেষ হলে ফাইলটি Open করে Install করব।
+6. Installation সম্পন্ন হলে CMD (Command Prompt) Open করব।
+   Official Download Link
+   NVM for Windows – GitHub ReleasesStep 2: NVM Install হয়েছে কিনা Check করা
+   CMD Open করে নিচের Command লিখব:
+   nvm -v
+
+Result: যদি NVM সঠিকভাবে Install হয়ে থাকে, তাহলে এর Version Number দেখতে পাব।
+
+যেমন:
+1.2.2
+
+এবার আমরা Node.js-এর Version Manage করতে পারব।
+Step 3: Available Node.js Versions দেখা
+কোন কোন Node.js Version Download করা যাবে, তা দেখতে CMD-তে লিখব:
+nvm list available
+
+এতে Download করার জন্য Available Node.js Versions-এর একটি List দেখতে পাব।
+
+এখান থেকে প্রয়োজন অনুযায়ী যেকোনো Version Select করতে পারব।
+Step 4: Node.js Version Install করা
+ধরো, আমরা Node.js Version 22 Install করতে চাই।
+
+তাহলে CMD-তে লিখব:
+nvm install 22
+
+অথবা নির্দিষ্ট Version Install করতে চাইলে:
+nvm install 22.14.0
+
+একইভাবে অন্য Version Install করতে পারব:
+nvm install 20
+nvm install 24
+
+Tip
+সর্বশেষ LTS Version Install করতে চাইলে:
+nvm install lts
+
+মনে রাখবে: install Command দিয়ে Node.js Download এবং Install করা হয়।
+Step 5: Install করা Node.js Versions দেখা
+আমরা কম্পিউটারে কোন কোন Node.js Version Install করেছি, তা দেখতে লিখব:
+nvm list
+
+অথবা Short Command:
+nvm ls
+
+এতে Install করা সব Version দেখতে পাব।
+
+উদাহরণ:
+
+- 22.14.0
+  20.19.1
+  24.0.0
+
+এখানে \* চিহ্নটি বর্তমানে Active থাকা Version নির্দেশ করে।
+Step 6: Node.js Version Change বা Switch করা
+ধরো, বর্তমানে Node.js Version 22 ব্যবহার করছি। এখন আমাদের Version 20 ব্যবহার করতে হবে।
+
+তাহলে লিখব:
+nvm use 20
+
+অথবা নির্দিষ্ট Version ব্যবহার করতে চাইলে:
+nvm use 20.19.1
+
+এখন Node.js Version 20 Active হয়ে যাবে।
+
+আবার Version 22-তে ফিরে যেতে চাইলে:
+nvm use 22
+
+এভাবেই যখন যে Version প্রয়োজন, তখন সেটি Switch করতে পারব।
+Step 7: Current Node.js Version Check করা
+বর্তমানে কোন Node.js Version Active আছে, তা দেখতে লিখব:
+node -v
+
+অথবা:
+node --version
+
+npm Version Check করতে:
+npm -v
+
+বর্তমানে কোন Version Active আছে, তা NVM দিয়েও দেখা যায়:
+nvm current
+
+Step 8: Node.js Version Uninstall করা
+কোনো Node.js Version আর প্রয়োজন না হলে সেটি Uninstall করতে পারব।
+
+ধরো, Version 20 Remove করতে চাই:
+nvm uninstall 20
+
+নির্দিষ্ট Version Remove করতে:
+nvm uninstall 20.19.1
+
+এতে শুধু নির্দিষ্ট Node.js Version Remove হবে। অন্য Installed Versions ঠিক থাকবে।
+
+Step 9: NVM-এর আরও কিছু প্রয়োজনীয় Command
+Command কাজ
+nvm -v NVM Version Check
+nvm install 22 Node.js 22 Install
+nvm install lts Latest LTS Install
+nvm use 22 Node.js 22 Active
+nvm ls Installed Versions দেখা
+nvm ls available Available Versions দেখা
+nvm current Current Version দেখা
+nvm uninstall 22 Node.js 22 Remove
+node -v Node.js Version Check
+npm -v npm Version Check
+
+Step 10: একটি Practical Example
+ধরো, তোমার কম্পিউটারে Node.js Version 20, 22 এবং 24 Install করা আছে।
+
+এখন তুমি একটি Next.js Project-এ Version 22 ব্যবহার করতে চাও।
+
+তাহলে Commandগুলো হবে:
+
+# Available versions দেখব
+
+nvm list available
+
+# Node.js 22 Install করব
+
+nvm install 22
+
+# Node.js 20 Install করব
+
+nvm install 20
+
+# Node.js 24 Install করব
+
+nvm install 24
+
+# Installed versions দেখব
+
+nvm ls
+
+# Node.js 22 ব্যবহার করব
+
+nvm use 22
+
+# Active version check করব
+
+node -v
+
+# npm version check করব
+
+npm -v
+
+বিশেষ কিছু বিষয় মনে রাখবে:
+
+- NVM Install করার পর CMD বন্ধ করে আবার Open করবে।
+- nvm use কাজ না করলে CMD Administrator হিসেবে Open করে চেষ্টা করবে।
+- Windows-এ আগে থেকে Node.js Install করা থাকলে NVM ব্যবহারের আগে পুরোনো Installation সরিয়ে নেওয়া ভালো, যাতে PATH Conflict না হয়।
+  Microsoft Learn+1
+- nvm ls এবং nvm list একই কাজ করে।
+- nvm ls available এবং nvm list available Available Versions দেখায়।
+  Official Documentation: NVM for Windows Documentation।
+
+এগুলো তোমার Node.js ও Next.js Development-এর জন্য সবচেয়ে প্রয়োজনীয় NVM Commands।
